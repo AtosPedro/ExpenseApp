@@ -67,7 +67,7 @@ const DOM = {
             <td class="date">${transaction.date}</td>
             <td>
             <span onclick="Transactions.remove(${index})"
-                ><img src="images/xButton.svg" alt="Remover transação"
+                ><img src="./images/xButton.svg" alt="Remover transação"
             /></span>
             </td>`;
 
