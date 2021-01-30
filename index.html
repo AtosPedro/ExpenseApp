@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Expense App</h1>
+    </header>
+
+    <main class="container">
+      <section id="expenseDisplay">
+
+        <div class="card">
+          <h3>Entradas:</h3>
+          <p id="incomeDisplay"></p>
+          <img src="images/plusButton.svg" alt="Entradas" />
+        </div>
+
+        <div class="card">
+          <h3>Saídas:</h3>
+          <p id="expensDisplay"></p>
+          <img src="/images/minusButton.svg" alt="Saídas" />
+        </div>
+
+        <div class="totalCard">
+          <h3>Total:</h3>
+          <p id="totalDisplay"></p>
+        </div>
+
+      </section>
+      <section id="expenseTable">
+        <a href="#" class="addTransaction" onclick="Modal.open()"
+          >+ Nova Transação</a
+        >
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <span id="addButton" onclick="Modal.open()">
+        <img src="images/addButton.svg" alt="Adcionar Transação" />
+      </span>
+    </main>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <div class="form">
+          <h2>Nova transação</h2>
+
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label for="description"></label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Descrição"
+              />
+            </div>
+            <div class="input-group">
+              <label for="amount">Valor</label>
+              <input
+                type="number"
+                name="amount"
+                id="amount"
+                step="0.01"
+                placeholder="R$0,00"
+              />
+
+              <small class="help"
+                >use o sinal - (negativo) para despesas e , (vírgula) para casas
+                decimais.
+              </small>
+            </div>
+            <div class="input-group">
+              <label for="date"></label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="01/01/2021"
+              />
+            </div>
+
+            <div class="input-group actions">
+              <a href="#" class="button cancel" onclick="Modal.close()"
+                >Cancelar</a
+              >
+              <button type="submit">Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Desenvolvido por Atos Pedro</p>
+    </footer>
+    <script src="scripts/scripts.js"></script>
+  </body>
+</html>
